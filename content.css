@@ -1,0 +1,16 @@
+.container {
+    background-color:rgb(255, 240, 218);
+    padding: 1em;
+}
+
+/* Make look pretty bc this text box. ^^ */
+
+/*need button look pretty too, look same, all same button*/
+
+button {
+    background-color: rgb(215, 196, 124);
+}
+
+button:active {
+    background-color: rgb(172, 153, 82);
+}
