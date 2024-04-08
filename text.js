@@ -59,71 +59,85 @@
 ]
 
 
-let state = {}
+
 
 const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('opttion-buttons')
+const optionButtonsElement = document.getElementById('option-buttons')
+
+let state = {}
 
 function startGame() {
-    state = {}
-    showTextNode(1)
+  state = {}
+  showTextNode(1)
 }
 
-function showTextNode(textNodeIndex){
- const textNode = textNodes.find(textNode => textNode.id ===
-textNodeIndex)
-textElement.innerText= textNode.text
-while(optionButtonsElement.firstChild) {
+function showTextNode(textNodeIndex) {
+  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+  textElement.innerText = textNode.text
+  while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-}
-textNode.options.forEach(option => {
-    if(showOption(option)){
-        const button = document.createElement('button')
-        button.innerText = option.text
-        button.classlist.add('btn')
-        button.addEventListener('click', ()=> selectOption(option))
-        optionButtonsElement.appendChild(button)
+  }
+
+  textNode.options.forEach(option => {
+    if (showOption(option)) {
+      const button = document.createElement('button')
+      button.innerText = option.text
+      button.classList.add('btn')
+      button.addEventListener('click', () => selectOption(option))
+      optionButtonsElement.appendChild(button)
     }
-})
+  })
 }
 
+function showOption(option) {
+  return option.requiredState == null || option.requiredState(state)
+}
 
 function selectOption(option) {
-
+  const nextTextNodeId = option.nextText
+  if (nextTextNodeId <= 0) {
+    return startGame()
+  }
+  state = Object.assign(state, option.setState)
+  showTextNode(nextTextNodeId)
 }
 
 const textNodes = [
     {
         id:1,
-        text:"",
+        text: `You awake in an empty classroom, you are Kazuki Ryuusen. It’s the afternoon with the soft golden light reflecting off your desk and warm breeze. It's peaceful. It’s always been peaceful. You realize that you’ve always gone with the flow, someone in the background, not someone to stand out. You are someone of no significance, would anyone even know if you just suddenly disappeared? Who would go looking for you? What impact have you made? ….. It’s late, go home, get some rest, you can think about it later..it’ll all be okay.
+        `,
         options:[
             {
-                text:'Fairy',
-                setEmpty: { Fairy: true},
-                nextText:2.1
-            },
-            {
-                text:'Elf',
-                nextTex:2.2
-            },
-            {
-                text:'Human',
-                nextText:2.3
+                text:'Leave',
+                setState: {leave: true},
+                nextText:2
             }
         ]
     },
     {
         id:2,
-        text:'You have wings and.. antennas..? You sense a greater feeling towards nature.'
-    },
-    {
-        id:3,
-        text:'You have longer ears, and you feel a surge of power.'
-    },
-    {
-        id:4,
-        text:'You’re the same as you were, maybe you just didn’t want to be a cool mythical creature but alright.'
+        text:`You’re about to leave the classroom, the serenity of it all and the thoughts. As you reach for the doorknob, you lose grip and.. Teleport? It feels like falling…
+        `,
+        options:[
+            {
+                text:'Proceed',
+                requiredState: (currentState) => currentState.leave,
+                setState:{ leave:false, die:false},
+                nextText:3
+            },
+            {
+                text:'Proceed',
+                requiredState: (currentState) => currentState.leave,
+                setState:{ leave:false, die:true},
+                nextText:3
+            }
+        ]
     }
 ]
 
 startGame()
+
+function changeImage(a) {
+    document.getElementById("img").src=a.src;
+} 

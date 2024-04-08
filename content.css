@@ -1,6 +1,15 @@
+body{
+    background-color: rgb(42, 42, 42);
+    padding-top: 5%;
+}
+
 .container {
+    position: relative;
+    left: 11em;
     background-color:rgb(255, 240, 218);
     padding: 1em;
+    width: 80%;
+    
 }
 
 /* Make look pretty bc this text box. ^^ */
@@ -13,4 +22,10 @@ button {
 
 button:active {
     background-color: rgb(172, 153, 82);
+}
+
+#background{
+    position: relative;
+    left: 28em;
+    width: 50%;
 }
