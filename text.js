@@ -105,7 +105,7 @@ function selectOption(option) {
 const textNodes = [
     {
         id:1,
-        text: `You awake in an empty classroom, you are Kazuki Ryuusen. It’s the afternoon with the soft golden light reflecting off your desk and warm breeze. It's peaceful. It’s always been peaceful. You realize that you’ve always gone with the flow, someone in the background, not someone to stand out. You are someone of no significance, would anyone even know if you just suddenly disappeared? Who would go looking for you? What impact have you made? ….. It’s late, go home, get some rest, you can think about it later..it’ll all be okay.
+        text: `You awake in an empty classroom, you are Kazuki Ryuusen. It’s the afternoon with the soft golden light reflecting off your desk and warm breeze. It's peaceful. It’s always been peaceful. You realize that you’ve always gone with the flow, someone in the background, not someone to stand out. You are someone of no significance, would anyone even know if you just suddenly disappeared? Who would go looking for you? What impact have you made? ..It’s late, go home, get some rest, you can think about it later..it’ll all be okay.
         `,
         options:[
             {
@@ -139,5 +139,5 @@ const textNodes = [
 startGame()
 
 function changeImage(a) {
-    document.getElementById("img").src=a.src;
+    document.getElementById("img").src=a;
 } 
