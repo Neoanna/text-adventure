@@ -16,16 +16,15 @@ body{
 
 /*need button look pretty too, look same, all same button*/
 
-button {
-    background-color: rgb(215, 196, 124);
-}
 
-button:active {
-    background-color: rgb(172, 153, 82);
-}
 
 #background{
     position: relative;
     left: 28em;
     width: 50%;
 }
+button {
+    display: block;
+    margin-top: 15px;
+  }
+  
