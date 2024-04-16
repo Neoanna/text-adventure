@@ -308,7 +308,7 @@ function getStory(name) {
         },
       ],
     },
-    Gotofrontlines: {
+    Goingtofrontlines: {
       title: "Back here again.",
       story:
         "What a mess… everyone seems so tired, emotionless. This war is slowly eating them alive and they know it. Get a night’s rest, and wait for the plan. Wait, never mind, you’re gonna be thrown out into the battlefield. Good Luck!!",
@@ -362,7 +362,7 @@ function getStory(name) {
     },
     Patrol: {
       title: "Going to patrol the forest.",
-      Story:
+      story:
         "You're first tasked with scouting the forest, and making sure that not even a mouse could bypass the defenses. While doing so, you meet someone in the fog, he’s tall and has horns. A demon so far into the enemy's border?",
       choices: [
         {
@@ -378,7 +378,7 @@ function getStory(name) {
       choices: [
         {
           choice: "Are you lost?",
-          destination: "Lost",
+          destination: "Losty",
         },
         {
           choice: "Who are you?",
@@ -390,10 +390,11 @@ function getStory(name) {
         }
       ],
     },
-    Lost: {
+    Losty: {
       title: "Are you lost?",
       story:
         "Demon: “No.” What a short answer!! What am I supposed to say now?? And what’s with that monotone voice!!",
+        defaultDestination: "Silence"
     },
     whoareYou: {
       title: "Who are you?",
@@ -412,7 +413,7 @@ function getStory(name) {
     },
     Killinghim: {
       title: "Kill the Demon King",
-      Story: "Let's head beck to the main storyline then..",
+      story: "Let's head beck to the main storyline then..",
       buttonText: "Let's head on back ya'll."
     },
     Donothing: {
@@ -471,20 +472,31 @@ function getStory(name) {
       ]
     },
     howyouKnow: {
-      title: "How do you know?",
-      story: ""
+      title: "How do you know me?",
+      story: "Demon: “Let me give you a hint. I am your fated enemy.” I know who he is…",
+      defaultDestination: "Knowingly"          
     },
     knowingly: {
       title: "I Know who you are.",
       story: "“The Demon King. You are the Demon King. You are my fated enemy.” Demon: “Kazuki, Am I not a worthy opponent.” There’s a hint of hospitality in his voice, but I somehow know he won’t attack me…",
       choices: [
         {
-          choice: "He laughs and tells you his name"
+          choice: "He laughs and tells you his name",
+          destination: "laughs"
         },
         {
-          choice: ""
+          choice: "experience",
+          destination: "firstChoice"
         }
       ]
+    },
+    laughs: {
+      story: "Hey! Why don’t you tell me your name since you know mine! He chuckles. HE LAUGHED? WHAT WAS SO FUNNY?! I’m over here trying to play my cards right, when he’s laughing! The audacity! Demon, “Azarel. My name is Azarel.”",
+      defaultDestination: "whoareYou"
+    },
+    firstChoice: {
+      story: "You know as well as I am you are way more experienced… I only have luck. Demon: “That’s true, though I think a fight with you wouldn’t be appetizing.” APPETIZING?! Does he mean to eat me alive?! Well, I don’t find it amusing that you wanna eat me, what am I supposed to even call you.",
+      defaultDestination: "laughs"
     }
   };
 }
