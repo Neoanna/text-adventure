@@ -3,7 +3,7 @@ body{
     padding-top: 1%;
     color: white;
 }
-.beginning {
+/* .beginning {
     display: flex;
     justify-content: flex-end;
 }
@@ -14,7 +14,7 @@ body{
     padding: 1em;
     width: 80%;
     
-}
+} */
 #background{
     position: relative;
     left: 28em;
