@@ -1,21 +1,20 @@
 body{
     background-color: rgb(42, 42, 42);
     padding-top: 5%;
+    color:white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-.container {
-    position: relative;
-    left: 11em;
-    background-color:rgb(255, 240, 218);
-    padding: 1em;
-    width: 80%;
+#content {
+
     
 }
 
-/* Make look pretty bc this text box. ^^ */
-
-/*need button look pretty too, look same, all same button*/
-
+.welcome{
+    text-shadow: 0px 0px 5px white;
+}
 
 
 #background{
@@ -24,7 +23,9 @@ body{
     width: 50%;
 }
 button {
-    display: block;
-    margin-top: 15px;
+    background-color: transparent;
+    color: white;
   }
   
+#name-input{
+}
