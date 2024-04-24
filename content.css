@@ -1,33 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
+
+
 body{
     background-color: rgb(42, 42, 42);
     padding-top: 1%;
-    color: white;
-}
-/* .beginning {
+    color: rgb(236, 236, 236);
     display: flex;
     justify-content: center;
-    width: 100%;
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #content {
-
-    
+border-style: solid;
+    width: 60%;
+    padding:2em;
+    margin-top: 2em;
 }
 
-.welcome{
+.a12bgf{
     text-shadow: 0px 0px 5px white;
 }
 
-
-#background{
-    position: relative;
-    left: 28em;
-    width: 50%;
-}
 button {
     background-color: transparent;
+    border-style: solid;
+    border-color: white;
+    border-width: 0.5px;
+    padding: 5px;
+    margin: 5px;
     color: white;
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  button:active{
+    background-color: rgb(73, 73, 73);
   }
   
 #name-input{
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
+/* (leeanna) hey I did some CSS and tampered with the html a bit ( the js still works, I played the game :> ). Just wanted to tell you just in case. Made a new js, html, and css file for an experiment.*/
