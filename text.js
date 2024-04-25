@@ -519,6 +519,8 @@ function renderScene() {
     let image = document.createElement('img');
     image.src = `pictures/${story[story.currentScene].image}`;
     element.appendChild(image);
+  } else {
+    document.querySelector("#imageContainer").innerHTML = '';
   }
   if (story[story.currentScene].buttonText) {
     text = story[story.currentScene].buttonText;
