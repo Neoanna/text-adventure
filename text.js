@@ -13,7 +13,7 @@ function getStory(name) {
       ],
     },
     classroom: {
-      title: "The epic battle for Cute Puppistan!",
+      title: "Beginning",
       story: `You’re about to leave the classroom, the serenity of it all and the thoughts. As you reach for the doorknob, you lose grip and.. Teleport? It feels like falling…`,
       choices: [
         {
@@ -29,7 +29,7 @@ function getStory(name) {
     Death: {
       title: "Back at home!",
       story: "End: 50/50 percent chance. Sorry.",
-      image: "video_game.png",
+      image: "classroom.jpg",
       defaultDestination: "classroom",
       buttonText: "Let's try this again",
     },
@@ -246,7 +246,7 @@ function getStory(name) {
     King: {
       title: "Coming back from defeating the dragon.",
       story:
-        "King, “ welcome back Kazuki! I heard tales of your adventure of slimes and dragons! I can’t believe you actually went from slimes to dragons! I think you’re ready to go to war. Go and join today’s troops at the front lines!”",
+        "King, “welcome back Kazuki! I heard tales of your adventure of slimes and dragons! I can’t believe you actually went from slimes to dragons! I think you’re ready to go to war. Go and join today’s troops at the front lines!”",
       choices: [
         {
           choice: "Go back to troops",
@@ -513,22 +513,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function renderScene() {
   var text = "Next";
-  var image = "";
-  // if (story[story.currentScene].image) {
-  //   image = "<img></img>"
-  // }
+  // var image;
+  if (story[story.currentScene].image) {
+    let element = document.querySelector("#imageContainer");
+    let image = document.createElement('img');
+    image.src = `pictures/${story[story.currentScene].image}`;
+    element.appendChild(image);
+  }
   if (story[story.currentScene].buttonText) {
     text = story[story.currentScene].buttonText;
   }
   content.innerHTML = `
   <h1>${story[story.currentScene].title}</h1>
   <p>${story[story.currentScene].story}</p>
-  ${image}
   ${getInputs()}
   <button id = "submit-button">${text}</button>
   `;
   // if (story[story.currentScene].image) {
-  //   document.querySelector("img").src = `./img/${story[story.currentScene].image}`
+  //   let element = document.querySelector(".imageContainer");
+  //   element.appendChild(image);
   // }
   var button = document.querySelector("#submit-button");
   button.addEventListener("click", function () {
