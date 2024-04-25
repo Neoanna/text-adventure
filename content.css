@@ -48,4 +48,6 @@ button {
     font-style: normal;
 }
 
-/* (leeanna) hey I did some CSS and tampered with the html a bit ( the js still works, I played the game :> ). Just wanted to tell you just in case. Made a new js, html, and css file for an experiment.*/
+@media only screen and (max-width:600px){
+    
+}
