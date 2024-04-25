@@ -1,3 +1,4 @@
+let secretEnding = 0;
 var story;
 function getStory(name) {
   return {
@@ -201,7 +202,7 @@ function getStory(name) {
       title: "Be kind to the dragon",
       story:
         "You’re actually going to remorse it? How heroic…. You bury the dragon and remorse over it.",
-      defaultDestination: "Fightdragon",
+      defaultDestination: "Secretending",
       buttonText: "The dragon is thankful.",
     },
     wrongWay: {
@@ -344,10 +345,7 @@ function getStory(name) {
       story:
         "What are you thinking? Fine. You tackle him, wait what? The demon king seems to be startled, and you actually manage to kill him in one slice. You won, so you head to the king, and tell him about your success. He rewards you with a gate way home, but wait, do you really want to go home?",
       choices: [
-        {
-          choice: "Wow good job.",
-          destination: "Secretending",
-        },
+        
       ],
     },
     Secretending: {
@@ -431,7 +429,7 @@ function getStory(name) {
       ]
     },
     smackAzarel: {
-      title: "Had to smack hims sometime",
+      title: "Had to smack him sometime",
       story: "Caelus laughs and finally gets his composure straight, “I hate you, but less.” Azarel scoffs, “I’m above such feelings.” Caelus is annoyed while Azarel smirks. Are you guys good now or..?? Azarel, “We're good.” Caelus, “for now.”"
     },
     changeTopic: {
@@ -500,6 +498,7 @@ function getStory(name) {
     }
   };
 }
+let Secretending =
 
 document.addEventListener("DOMContentLoaded", function () {
   var button = document.querySelector("#start-button");
@@ -545,7 +544,12 @@ function getInputValue() {
   var inputs = document.querySelectorAll('input[type="radio"]');
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
+
       story.currentScene = inputs[i].getAttribute("data-destination");
+      // enable secret ending
+      if(inputs[i].getAttribute("data-destination") == 'remorseDragon'){
+        secretEnding = 1;
+      }
       renderScene();
       return;
     }
