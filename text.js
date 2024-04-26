@@ -1,4 +1,3 @@
-let secretEnding = 0;
 var story;
 function getStory(name) {
   return {
@@ -6,7 +5,6 @@ function getStory(name) {
     attack: {
       title: "Chapter 1",
       story: `You awake in an empty classroom, you are Kazuki Ryuusen. It’s the afternoon with the soft golden light reflecting off your desk and warm breeze. It’s peaceful. It’s always been peaceful. You realize that you’ve always gone with the flow, someone in the background, not someone to stand out. You are someone of no significance, would anyone even know if you just suddenly disappeared? Who would go looking for you? What impact have you made? ….. It’s late, go home, get some rest, you can think about it later..it’ll all be okay.${name}.`,
-      image: "classroom.jpg",
       choices: [
         {
           choice: "Leave",
@@ -15,7 +13,7 @@ function getStory(name) {
       ],
     },
     classroom: {
-      title: "Beginning",
+      title: "The epic battle for Cute Puppistan!",
       story: `You’re about to leave the classroom, the serenity of it all and the thoughts. As you reach for the doorknob, you lose grip and.. Teleport? It feels like falling…`,
       choices: [
         {
@@ -31,7 +29,7 @@ function getStory(name) {
     Death: {
       title: "Back at home!",
       story: "End: 50/50 percent chance. Sorry.",
-      image: "classroom.jpg",
+      image: "video_game.png",
       defaultDestination: "classroom",
       buttonText: "Let's try this again",
     },
@@ -203,8 +201,13 @@ function getStory(name) {
       title: "Be kind to the dragon",
       story:
         "You’re actually going to remorse it? How heroic…. You bury the dragon and remorse over it.",
-      defaultDestination: "Secretending",
-      buttonText: "The dragon is thankful.",
+      defaultDestination: "Fightdragon",
+      choices: [
+        {
+          choice: "Secretending",
+          destination: "Secretending"
+        }
+      ]
     },
     wrongWay: {
       title: "Leaving the Trail.",
@@ -248,7 +251,7 @@ function getStory(name) {
     King: {
       title: "Coming back from defeating the dragon.",
       story:
-        "King, “welcome back Kazuki! I heard tales of your adventure of slimes and dragons! I can’t believe you actually went from slimes to dragons! I think you’re ready to go to war. Go and join today’s troops at the front lines!”",
+        "King, “ welcome back Kazuki! I heard tales of your adventure of slimes and dragons! I can’t believe you actually went from slimes to dragons! I think you’re ready to go to war. Go and join today’s troops at the front lines!”",
       choices: [
         {
           choice: "Go back to troops",
@@ -346,12 +349,45 @@ function getStory(name) {
       story:
         "What are you thinking? Fine. You tackle him, wait what? The demon king seems to be startled, and you actually manage to kill him in one slice. You won, so you head to the king, and tell him about your success. He rewards you with a gate way home, but wait, do you really want to go home?",
       choices: [
-        
+        {
+          choice: "Go Home",
+          destination: "Hometime"
+        },
+        {
+          choice: "Stay",
+          destination: "Stay"
+        }
       ],
+    },
+    Stay: {
+      title: "You decided to stay.",
+      story: "You decided to stay with your friends, and you live a long life as a noble hero."
+    },
+    Hometime: {
+      title: "Time to go home.",
+      story: "You  go home with the memories of your adventure. You're in your bed. Should you tell everyone about the other world, or keep it to yourself?",
+      choices: [
+        {
+          choice: "Keep it to yourself",
+          destination: "Keepittoyou"
+        },
+        {
+          choice: "Tell everyone",
+          destination: "Telleveryone"
+        }
+      ]
+    },
+    Telleveryone: {
+      title: "Your going to tell everyone.",
+      story: "You tell everyone and everyone thinks you're crazy, so you get sent to a pshychiatric ward."
+    },
+    Keepittoyou: {
+      title: " Keep it to yourself",
+      story: "You decide to keep it to yourself, and write a book. You're now a best selling author, and live a lonely life."
     },
     Secretending: {
       title: "Secret Ending",
-      story: "This is only attainable if you sparred with Caelus.",
+      story: "This is only attainable if you remorsed the dragon.",
       choices: [
         {
           choice: "Go Patrol the forest.",
@@ -377,7 +413,7 @@ function getStory(name) {
       choices: [
         {
           choice: "Are you lost?",
-          destination: "Losty",
+          destination: "youLost",
         },
         {
           choice: "Who are you?",
@@ -389,16 +425,25 @@ function getStory(name) {
         }
       ],
     },
-    Losty: {
+    youLost: {
       title: "Are you lost?",
       story:
         "Demon: “No.” What a short answer!! What am I supposed to say now?? And what’s with that monotone voice!!",
-        defaultDestination: "Silence"
+        defaultDestination: "whoareYou"
     },
     whoareYou: {
       title: "Who are you?",
       story:
-        "Demon: “I'm Azarel. The Demon King.” Wait, what?! THE DEMON KING?! Oh dear… This ain’t good. Can you even fight someone like that? Or should we avoid a fight?? I'm Kazuki. Azarel: “I know.” HE KNEW? But he’s not attacking me? Maybe he’s being careful.. No, he knows he’s stronger than me, has more experience than me. Maybe I'm not even a threat to him… Well I knew that you were the demon king as well!  Azarel: “Of course you did.” There’s definitely sarcasm in his voice!! What should I say?! If you knew why, why aren’t you attacking me? Azarel: “Should I?” I swear… WHAT’S WITH THESE SHORT RESPONSES?! TALK MAN. Explain. Azarel sighs, “Why didn’t you attack me.” Good question, wait, that’s my question!!... Why didn’t I attack him?! You didn’t seem hostile. Azarel: “But I’m a demon.”... He makes a good point. Should I have attacked you? Azarel: “...You should have, but you didn’t. Am I not a threat to you? Do you think I’m not even worth fighting?” Wait, there’s some insecurity in his voice!! I didn’t mean to?! Now I feel bad..! It’s not like we don’t know that you’re the stronger one here. I’m sorry..! I didn’t mean to say anything to offend you, I was just trying to make conversation! Just then… a twig snapped hat caught both of our attention. The crown prince. And he does NOT seem happy. Actually, He’s charging at Azarel?! Caelus, wait!! He’s not hostile! You can’t even win?! Caelus ignores you, and tackles the demon king, Azarel took the hit even though he could’ve ended him then and there. “Kazuki would’ve been sad if you were dead.” Wait, he didn’t kill Caelus because of me? Thank you. I don’t know what I would’ve done if he died. Azarel, “Of course.” Caelus, “HE WAS THE ONE WHO KILLED HER. KAZUKI PLEASE END HIM!!",
+        "Demon: “I'm Azarel. The Demon King.” Wait, what?! THE DEMON KING?! Oh dear… This ain’t good. Can you even fight someone like that? Or should we avoid a fight?? I'm Kazuki. Azarel: “I know.” HE KNEW? But he’s not attacking me? Maybe he’s being careful.. No, he knows he’s stronger than me, has more experience than me. Maybe I'm not even a threat to him… Well I knew that you were the demon king as well!  Azarel: “Of course you did.” There’s definitely sarcasm in his voice!! What should I say?! If you knew why, why aren’t you attacking me? Azarel: “Should I?” I swear… WHAT’S WITH THESE SHORT RESPONSES?! TALK MAN. Explain. Azarel sighs, “Why didn’t you attack me.” Good question, wait, that’s my question!!... Why didn’t I attack him?! You didn’t seem hostile. Azarel: “But I’m a demon.”... He makes a good point. Should I have attacked you? Azarel: “...You should have, but you didn’t. Am I not a threat to you? Do you think I’m not even worth fighting?” Wait, there’s some insecurity in his voice!! I didn’t mean to?! Now I feel bad..! It’s not like we don’t know that you’re the stronger one here. I’m sorry..! I didn’t mean to say anything to offend you, I was just trying to make conversation!",
+      choices: [
+        {
+          choice: "Caelus appears",
+          destination: "Caelus"
+        }
+      ],
+    },
+    Caelus: {
+      story: "Just then… a twig snapped hat caught both of our attention. The crown prince. And he does NOT seem happy. Actually, He’s charging at Azarel?! Caelus, wait!! He’s not hostile! You can’t even win?! Caelus ignores you, and tackles the demon king, Azarel took the hit even though he could’ve ended him then and there. “Kazuki would’ve been sad if you were dead.” Wait, he didn’t kill Caelus because of me? Thank you. I don’t know what I would’ve done if he died. Azarel, “Of course.” Caelus, “HE WAS THE ONE WHO KILLED HER. KAZUKI PLEASE END HIM!!",
       choices: [
         {
           choice: "Kill the Demon King",
@@ -408,12 +453,23 @@ function getStory(name) {
           choice: "Do nothing.",
           destination: "Donothing"
         }
-      ],
+      ]
     },
     Killinghim: {
       title: "Kill the Demon King",
-      story: "Let's head beck to the main storyline then..",
-      buttonText: "Let's head on back ya'll."
+      Story: "Let's head beck to the main storyline then..",
+      buttonText: "Let's head on back ya'll.",
+      choices: [
+        {
+          choice: "The demon king fights back",
+          destination: "Heattacks",
+        }
+      ]
+    },
+    Heattacks: {
+      title: "The Demon King fights back",
+      story: "The demon king doesn't waste another breath blocking your attack, and he suddenly attacks as well...",
+      defaultDestination: "tackle"
     },
     Donothing: {
       title: "Didn't kill the Demon King",
@@ -430,12 +486,32 @@ function getStory(name) {
       ]
     },
     smackAzarel: {
-      title: "Had to smack him sometime",
+      title: "Had to smack hims sometime",
       story: "Caelus laughs and finally gets his composure straight, “I hate you, but less.” Azarel scoffs, “I’m above such feelings.” Caelus is annoyed while Azarel smirks. Are you guys good now or..?? Azarel, “We're good.” Caelus, “for now.”"
     },
     changeTopic: {
       title: "Distract them",
-      story: "“It’s getting late, I think we stayed here for too long, plus I’m supposed to be on patrol.” Caelus follows you and sticks out a tongue at Azarel. These children…"
+      story: "“It’s getting late, I think we stayed here for too long, plus I’m supposed to be on patrol.” Caelus follows you and sticks out a tongue at Azarel. These children…",
+      choices: [
+        {
+          choice: "Head back to camp",
+          destination: "backtoCamp"
+        }
+      ]
+    },
+    backtoCamp: {
+      title: "Go back to camp.",
+      story: "Azarel, 'Wait.' You halt. Caelus doesn't look back, rather, he's quite annoyed. 'I want to stop fighting. War takes a lot out of you when you're at it for generations..' Caelus, 'I can't do that myself, aa much political power as I have, nothing will sway my father.'",
+      choices: [
+        {
+        choice: "We'll figure something out",
+        destination: "Figuresomething"
+        }
+      ]
+    },
+    Figuresomething: {
+      title: "Figure out something.",
+      story: "Caelus and you go back to the camp, and tell them to retreat. Azarel does the same and the border is fixed as it was before the war...Caelus talks to his father and threatened him to stand down as king, he then becomes king with no casualties, haha, who am I kidding, Caelus kills the king. A meeting is held and you meet the demon king once again, and they talk it out to an agreement. Apparently, Caelus killed your only way out of the world, the kingdidn't use a ritual to summon you, but his own power. So, you're stuck with being the median to the Demon King and Human King as a war hero, the Duke of Leviathan. ENDINGGG!!!!!!",
     },
     Silence: {
       title: "Shhhh",
@@ -471,9 +547,9 @@ function getStory(name) {
       ]
     },
     howyouKnow: {
-      title: "How do you know me?",
-      story: "Demon: “Let me give you a hint. I am your fated enemy.” I know who he is…",
-      defaultDestination: "Knowingly"          
+      title: "How do you know?",
+      story: "Demon: 'Let me give you a hint. I am your fated enemy.' I know who he is",
+      defaultDestination: "knowingly"
     },
     knowingly: {
       title: "I Know who you are.",
@@ -481,25 +557,16 @@ function getStory(name) {
       choices: [
         {
           choice: "He laughs and tells you his name",
-          destination: "laughs"
+          destination: "Laughing"
         },
-        {
-          choice: "experience",
-          destination: "firstChoice"
-        }
       ]
-    },
-    laughs: {
-      story: "Hey! Why don’t you tell me your name since you know mine! He chuckles. HE LAUGHED? WHAT WAS SO FUNNY?! I’m over here trying to play my cards right, when he’s laughing! The audacity! Demon, “Azarel. My name is Azarel.”",
-      defaultDestination: "whoareYou"
-    },
-    firstChoice: {
-      story: "You know as well as I am you are way more experienced… I only have luck. Demon: “That’s true, though I think a fight with you wouldn’t be appetizing.” APPETIZING?! Does he mean to eat me alive?! Well, I don’t find it amusing that you wanna eat me, what am I supposed to even call you.",
-      defaultDestination: "laughs"
+    }, 
+    Laughing: {
+      story: "He chuckles. HE LAUGHED? WHAT WAS SO FUNNY?! I'm over here trying to play my cards right, when he's laughing! The audacity1 Demon: 'Azarel. My name is Azarel'.",
+      defaultDestination: "Caelus"
     }
   };
 }
-let Secretending =
 
 document.addEventListener("DOMContentLoaded", function () {
   var button = document.querySelector("#start-button");
@@ -513,27 +580,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function renderScene() {
   var text = "Next";
-  // var image;
-  if (story[story.currentScene].image) {
-    let element = document.querySelector("#imageContainer");
-    let image = document.createElement('img');
-    image.src = `pictures/${story[story.currentScene].image}`;
-    element.appendChild(image);
-  } else {
-    document.querySelector("#imageContainer").innerHTML = '';
-  }
+  var image = "";
+  // if (story[story.currentScene].image) {
+  //   image = "<img></img>"
+  // }
   if (story[story.currentScene].buttonText) {
     text = story[story.currentScene].buttonText;
   }
   content.innerHTML = `
   <h1>${story[story.currentScene].title}</h1>
   <p>${story[story.currentScene].story}</p>
+  ${image}
   ${getInputs()}
   <button id = "submit-button">${text}</button>
   `;
   // if (story[story.currentScene].image) {
-  //   let element = document.querySelector(".imageContainer");
-  //   element.appendChild(image);
+  //   document.querySelector("img").src = `./img/${story[story.currentScene].image}`
   // }
   var button = document.querySelector("#submit-button");
   button.addEventListener("click", function () {
@@ -545,12 +607,7 @@ function getInputValue() {
   var inputs = document.querySelectorAll('input[type="radio"]');
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
-
       story.currentScene = inputs[i].getAttribute("data-destination");
-      // enable secret ending
-      if(inputs[i].getAttribute("data-destination") == 'remorseDragon'){
-        secretEnding = 1;
-      }
       renderScene();
       return;
     }
