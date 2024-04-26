@@ -5,6 +5,7 @@ function getStory(name) {
     attack: {
       title: "Chapter 1",
       story: `You awake in an empty classroom, you are Kazuki Ryuusen. It’s the afternoon with the soft golden light reflecting off your desk and warm breeze. It’s peaceful. It’s always been peaceful. You realize that you’ve always gone with the flow, someone in the background, not someone to stand out. You are someone of no significance, would anyone even know if you just suddenly disappeared? Who would go looking for you? What impact have you made? ….. It’s late, go home, get some rest, you can think about it later..it’ll all be okay.${name}.`,
+      image: "classroom.jpg",
       choices: [
         {
           choice: "Leave",
@@ -15,6 +16,7 @@ function getStory(name) {
     classroom: {
       title: "The epic battle for Cute Puppistan!",
       story: `You’re about to leave the classroom, the serenity of it all and the thoughts. As you reach for the doorknob, you lose grip and.. Teleport? It feels like falling…`,
+      image: "classroom.jpg",
       choices: [
         {
           choice: "Die while teleporting.",
@@ -29,7 +31,7 @@ function getStory(name) {
     Death: {
       title: "Back at home!",
       story: "End: 50/50 percent chance. Sorry.",
-      image: "video_game.png",
+      image: "lolGrave.jpg",
       defaultDestination: "classroom",
       buttonText: "Let's try this again",
     },
@@ -37,7 +39,8 @@ function getStory(name) {
       title: "something",
       story:
         "Wait, what's that over there? Three spirits? They look like an elf, a fairy, and a regular human? Look, they’re trying to merge with you, Kazuki, merging with them will guarantee a safe teleport. ",
-      choices: [
+        image: "orbs.jpg",
+        choices: [
         {
           choice: "Elf",
           destination: "Elf",
@@ -55,6 +58,7 @@ function getStory(name) {
     Elf: {
       title: "First Choice",
       story: "You have longer ears, and you feel a surge of power.",
+      image:"forestWaterFall.jpg",
       defaultDestination: "ATM",
       buttonText: "Good Pick.",
     },
@@ -62,21 +66,24 @@ function getStory(name) {
       title: " Second Choice",
       story:
         "You have wings and.. Antennas…? You sense a greater feeling towards nature.",
-      defaultDestination: "ATM",
+      image:"crystal.jpg",
+        defaultDestination: "ATM",
       buttonText: "Wow, you shrunk bro.",
     },
     Human: {
       title: "Third Choice",
       story:
         "You’re the same as you were, you just didn’t want to be a cool mythical creature but alright.",
-      defaultDestination: "ATM",
+        image: "humans.jpg",
+        defaultDestination: "ATM",
       buttonText: "You're really boring.",
     },
     ATM: {
       title: "ATM",
       story:
         "Something speaks to you in your head, oh wait, this is in your head, haha! Hello, I am a system, your Auto Technical Memory, or ATM for short, I will guide you on this adventure. You feel ground beneath you, it’s a soft red carpet. As your eyes trail this carpet along the marble floor you find a king at the end of it.. He seems powerful and cocky. Then he says, “Kazuki Ryuusen from across the universe, I am King Idgris, please follow my commands and train to fight in this way, I promise you great glory and a safe return home.” A chance to become someone useful? A chance to become a hero> No. An opportunity to save this world.",
-      choices: [
+        image: "ATM.jpg",
+        choices: [
         {
           choice: "No",
           destination: "No",
@@ -127,7 +134,8 @@ function getStory(name) {
       title: "Can't believe you lost.",
       story:
         "Wow, you lost against a rookie, maybe they chose the wrong hero. Kidding of course, don’t lose hope just because you lost once in something you never experienced before. OK, let’s train. First thing we should do is fight some slime, they’re weak but you’ll get a good feel of the battlefield.",
-      choices: [
+        image:"",
+        choices: [
         {
           choice: "Find Slimes",
           destination: "Slimes",
@@ -143,6 +151,7 @@ function getStory(name) {
       story:
         "The slimes are cute, but don’t fall for it, they’re an extremely invasive species that adapt to any environment and eat everything. Even life forces if there’s enough of them. Remember, you’re only here to gain experience. Let’s start slow and follow the trail to the slime patch.",
       buttonText: "Go follow the trail",
+      image:"slimeForest.jpg",
       choices: [
         {
           choice: "Follow the trail",
@@ -154,7 +163,8 @@ function getStory(name) {
       title: "Found the slimes.",
       story:
         "Wow there’s a lot of slimes here, don’t worry though, even a kid could fight them. Just be careful where you step and stay on guard of your surroundings. ",
-      choices: [
+      image:"slimeField.jpg",
+        choices: [
         {
           choice: "Kill Slime",
           destination: "Killslime",
@@ -165,7 +175,8 @@ function getStory(name) {
       title: "Killing slimes",
       story:
         "You slay the slimes and get a better understanding of fighting. You sense a better feeling of the sword, the flow of your strikes and slashes becoming one with your body and movement. Maybe you do have the talent for swordsmanship, anywho, let’s go fight the dragon. ",
-      choices: [
+        image: "slimeInQuestion.png",
+        choices: [
         {
           choice: "Refuse",
           destination: "Refuse",
@@ -179,6 +190,7 @@ function getStory(name) {
     Refuse: {
       title: "refuse",
       story: "Too bad(forced to fight the dragon anyways).",
+      image:"",
       defaultDestination: "Killslime",
       buttonText: "Fighting sucks ",
     },
@@ -186,7 +198,8 @@ function getStory(name) {
       title: "Fighting the dragon'",
       story:
         "You are directed by the ATM to the dragon's cave and proceed further into the cave. You peek around the corner where a dim light sits and you see a dragon at the end of it surrounded by priceless gems and minerals. The dragon is sleeping, so this is the perfect chance to attack. You quietly sneak up close to the dragon, and strike its eyes, the dragon awakes and spins around hitting you with its tail. You’re injured but quickly get to your feet and strike the dragon’s legs, reducing its mobility. Then it falls forward to the ground and you take one final swing to the neck of the dragon. It’s dead. That dragon took down 3 empires to get its fortune, or at least as much as you can carry. Ok, time to go back to the king.",
-      choices: [
+        image:"",
+        choices: [
         {
           choice: "Go back to the king",
           destination: "King",
@@ -201,7 +214,8 @@ function getStory(name) {
       title: "Be kind to the dragon",
       story:
         "You’re actually going to remorse it? How heroic…. You bury the dragon and remorse over it.",
-      defaultDestination: "Fightdragon",
+        image:"RIPDragon.jpg",
+        defaultDestination: "Fightdragon",
       choices: [
         {
           choice: "Secretending",
@@ -214,6 +228,7 @@ function getStory(name) {
       story:
         "Wait, where are you going? You haven’t even been in this game for that long and you’re already going where you want? I might be a voice in your head but you should still listen to me! Wait, is that a cave? Don’t go in there!",
       buttonText: "Where are you going?",
+      image:"slimeForest.jpg",
       choices: [
         {
           choice: "Go in the cave",
@@ -581,9 +596,15 @@ document.addEventListener("DOMContentLoaded", function () {
 function renderScene() {
   var text = "Next";
   var image = "";
-  // if (story[story.currentScene].image) {
-  //   image = "<img></img>"
-  // }
+  if (story[story.currentScene].image) {
+    let element = document.querySelector("#imageContainer");
+    element.innerHTML='';
+    let image = document.createElement('img');
+    image.src = `pictures/${story[story.currentScene].image}`;
+    element.appendChild(image);
+  } else {
+    document.querySelector("#imageContainer").innerHTML = '';
+  }
   if (story[story.currentScene].buttonText) {
     text = story[story.currentScene].buttonText;
   }
