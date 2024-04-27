@@ -395,11 +395,13 @@ function getStory(name) {
       title: "You decided to stay.",
       story: "You decided to stay with your friends, and you live a long life as a noble hero.",
       image: "castle.jpg",
+      buttonText: "YAYY YOU STAYED!!",
     },
     Hometime: {
       title: "Time to go home.",
       story: "You  go home with the memories of your adventure. You're in your bed. Should you tell everyone about the other world, or keep it to yourself?",
       image: "bedroom.jpg",
+      buttonText: "Dang you really wanted to leave",
       choices: [
         {
           choice: "Keep it to yourself",
@@ -499,7 +501,7 @@ function getStory(name) {
     },
     Killinghim: {
       title: "Kill the Demon King",
-      Story: "Let's head beck to the main storyline then..",
+      story: "Let's head beck to the main storyline then..",
       image: "forest.jpg",
       buttonText: "Let's head on back ya'll.",
       choices: [
@@ -533,7 +535,13 @@ function getStory(name) {
     smackAzarel: {
       title: "Had to smack hims sometime",
       image: "forest.jpg",
-      story: "Caelus laughs and finally gets his composure straight, “I hate you, but less.” Azarel scoffs, “I’m above such feelings.” Caelus is annoyed while Azarel smirks. Are you guys good now or..?? Azarel, “We're good.” Caelus, “for now.”"
+      story: "Caelus laughs and finally gets his composure straight, “I hate you, but less.” Azarel scoffs, “I’m above such feelings.” Caelus is annoyed while Azarel smirks. Are you guys good now or..?? Azarel, “We're good.” Caelus, “for now.”",
+      choices: [
+        {
+          choice: "Head back to camp",
+          destination: "backtoCamp"
+        }
+      ]
     },
     changeTopic: {
       title: "Distract them",
@@ -561,6 +569,7 @@ function getStory(name) {
       title: "Figure out something.",
       image:"camp.jpg",
       story: "Caelus and you go back to the camp, and tell them to retreat. Azarel does the same and the border is fixed as it was before the war...Caelus talks to his father and threatened him to stand down as king, he then becomes king with no casualties, haha, who am I kidding, Caelus kills the king. A meeting is held and you meet the demon king once again, and they talk it out to an agreement. Apparently, Caelus killed your only way out of the world, the kingdidn't use a ritual to summon you, but his own power. So, you're stuck with being the median to the Demon King and Human King as a war hero, the Duke of Leviathan. ENDINGGG!!!!!!",
+      buttonText: "ENDiNG!!!!!!"
     },
     Silence: {
       title: "Shhhh",
