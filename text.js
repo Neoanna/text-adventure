@@ -98,7 +98,7 @@ function getStory(name) {
       title: "Choice No",
       story:
         "The king was not pleased with your answer, he has no use for you so he signals his guard to kill you. As a sword pierces your heart, you die feeling the sharp pain of the blade.",
-      image:"longHall.jpg.jpg",
+      image:"longHall.jpg",
         defaultDestination: "ATM",
       buttonText: "Gotta start pver again. Sorry.",
     },
@@ -106,7 +106,7 @@ function getStory(name) {
       title: "Correct Choice",
       story:
         "The king is pleased and tells one of his knights to guide you to the knights quarters. You finally got the opportunity to be someone, and you took it. The first thing you do when you’re at the quarters is get into gear and spar a rookie.",
-        image:"longHall.jpg.jpg",
+        image:"longHall.jpg",
         choices: [
         {
           choice: "Strike First",
